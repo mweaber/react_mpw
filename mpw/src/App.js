@@ -1,13 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
 import './App.css';
+import Container from 'react-bootstrap/Container'
 import Navs from './components/Navs'
+import About from './pages/About'
 
 function App() {
   return (
-    <div className="App">
-      <Navs className='heading'/>
-    </div>
+    <BrowserRouter>
+      <Navs />
+      <Switch>
+        <Route exact path='/about' component={About} />
+      </Switch>
+    </BrowserRouter>
+
+
   );
 }
 
